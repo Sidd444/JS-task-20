@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+    overflow: auto;
+	overflow-x:hidden;
+}
+        .navbar {
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 20px;
+            font-weight: bold;
+            opacity: 300%;
+            background-color: #f0f8ff;
+        }
+
+        #first-h1 {
+            font-weight: bolder;
+            font-size: 60px;
+        }
+
+        #left_div {
+            margin-right: 15%;
+            margin-left: 10%;
+        }
+
+        #ls {
+            color: rgb(39, 39, 226);
+        }
+
+        #left_div>p {
+            color: hsl(0, 7%, 35%);
+            font-size: 20px;
+        }
+
+        #book-button {
+            border: 1px solid rgb(10, 69, 231);
+            background-color: rgb(10, 69, 231);
+            color: white;
+            border-radius: 10px;
+            height: 50px;
+            width: 300px;
+            font-size: 15px;
+        }
+
+        #username {
+            color: blue;
+            font-weight: bold;
+            background-color: rgb(160, 238, 212);
+            height: 6vh;
+            width: 8vw;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border: none;
+            margin-top: 5%;
+        }
+
+        #username:hover {
+            box-shadow: 0px 0px 5px 5px rgb(160, 238, 212);
+            ;
+            transition: 0.3s;
+        }
+
+        #logout {
+            height: 6vh;
+            width: 4vw;
+            background-color: rgb(255, 123, 123);
+            color: rgb(190, 13, 13);
+            font-size: larger;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border: none;
+            margin-top: 5%;
+        }
+
+        #logout:hover {
+            box-shadow: 0px 0px 5px 5px rgb(255, 123, 123);
+            transition: 0.3s;
+        }
+
+        .logo>img,
+        #last-info img {
+            height: 30px;
+            width: 40px;
+        }
+
+        .logo {
+            margin-top: 0px;
+            justify-content: left;
+            margin-right: 25%;
+        }
+
+        #right_div>img {
+            height: 400px;
+            width: 400px;
+            margin-top: 15%;
+        }
+
+        #right_div {
+            margin-right: 10%;
+            padding-left: 0%;
+            margin-top: 5%;
+        }
+
+        .hero_section {
+            display: flex;
+        }
+
+        .h-nav {
+            display: none;
+        }
+
+        @media screen and (max-width:800px) {
+            .hero_section {
+                display: block;
+            }
+
+            #left_div>h1 {
+                font-size: 50px;
+            }
+
+            #left_div>p {
+                font-size: 15px;
+            }
+
+            .nav-options {
+                display: none;
+            }
+
+            .ham>span {
+                height: 3px;
+                width: 25px;
+                background-color: black;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                margin: 3px;
+            }
+
+            .ham:hover {
+                background-color: aqua;
+            }
+
+            #right_div>img {
+                height: 200px;
+                width: 200px;
+                margin-top: 5%;
+                margin-left: 25%;
+            }
+        }
+
+        @media screen and (max-width<375px) {
+
+            #left_div>h1 {
+                font-size: 30px;
+            }
+
+            #right_div {
+                height: 20px;
+                width: 30px;
+            }
+
+            .logo {
+                width: 50px;
+            }
+
+            .logo>img {
+                height: 50px;
+                width: auto;
+            }
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f0f8ff;
+            padding: 10px 20px;
+        }
+
+        /* Styles for the hamburger icon */
+        .hamburger {
+            display: none;
+            /* Hide hamburger icon by default */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Styles for the lines in the hamburger icon */
+        .line {
+            width: 100%;
+            height: 3px;
+            background-color: #000;
+            transition: transform 0.3s;
+            /* Smooth transition for animation */
+        }
+
+        /* Spacing between lines in the hamburger icon */
+        .line:nth-child(2) {
+            margin: 5px 0;
+        }
+
+        /* Animation for the hamburger icon when focused */
+        .hamburger:focus .line {
+            transform: rotate(-45deg);
+            /* Rotate lines to form an X */
+        }
+
+        /* Styles for the menu */
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* Styles for menu items */
+        .menu li {
+            margin-right: 20px;
+        }
+
+        /* Remove margin from last menu item */
+        .menu li:last-child {
+            margin-right: 0;
+        }
+
+        /* Styles for menu item links */
+        .menu a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Show menu when hamburger is focused */
+        .hamburger:focus+.menu {
+            display: flex;
+        }
+
+        /* Hide menu when hamburger loses focus */
+        .hamburger:not(:focus)+.menu {
+            display: none;
+        }
+
+        /* Toggle hamburger icon when hamburger is focused */
+        .hamburger:focus .line:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 5px);
+            /* Rotate and move first line */
+        }
+
+        .hamburger:focus .line:nth-child(2) {
+            opacity: 0;
+            /* Hide second line */
+        }
+
+        .hamburger:focus .line:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -5px);
+            /* Rotate and move third line */
+        }
+
+        /* Show hamburger icon for small screens */
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                display: flex;
+                /* Show hamburger icon */
+            }
+
+            /* Styles for the menu on small screens */
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                background-color: black;
+                z-index: 1;
+            }
+
+            /* Remove margin from menu items on small screens */
+            .menu li {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            li>p {
+                color: white;
+                z-index: 0;
+            }
+
+            /* Show menu when hamburger is focused on small screens */
+            .hamburger:focus+.menu {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 75vw;
+                height: 100%;
+                margin-left: 25%;
+            }
+
+        }
+
+        #first-footer {
+            display: flex;
+            justify-content: space-evenly;
+            height: 15vh;
+            width: 100vw;
+            background-color: rgb(69, 69, 236);
+            font-weight: bold;
+        }
+
+        #first-footer>h2 {
+            margin-top: 2.5%;
+        }
+
+        #first-footer>div>h4 {
+            margin-bottom: -10px;
+            font-size: larger;
+        }
+
+        .nav-options:hover {
+            text-decoration: underline;
+            color: blue;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>home page</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="https://webstockreview.net/images/clipart-fruit-washing-18.png"></div>
+        <div class="nav-options">
+            <h3>Home</h3>
+        </div>
+        <div class="nav-options">
+            <h3>Services</h3>
+        </div>
+        <div class="nav-options">
+            <h3>About Us</h3>
+        </div>
+        <div class="nav-options">
+            <h3>Contact Us</h3>
+        </div>
+        <div style="display:flex;margin-left:300px">
+            <button id="username">Siddhath</button>
+            <button class="fa-solid fa-right-from-bracket" id="logout"></button>
+        </div>
+        <label for="toggle" class="hamburger" tabindex="0">
+            <div class="line"></div> <!-- First line of the hamburger icon -->
+            <div class="line"></div> <!-- Second line of the hamburger icon -->
+            <div class="line"></div> <!-- Third line of the hamburger icon -->
+        </label>
+        <!-- Menu -->
+        <ul class="menu">
+            <li>
+                <p><a href="#">Home</a></p>
+            </li>
+            <li>
+                <p><a href="#">Services</a></p>
+            </li>
+            <li>
+                <p><a href="#">About Us</a></p>
+            </li>
+            <li>
+                <p><a href="#">Contact Us</a></p>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="hero_section">
+        <div id="left_div">
+            <h1 id="first-h1">Revitalize Your Clothes With Expert <span id="ls">Laundry Services!</span></h1>
+            <p>From premium dry cleaning to swift wash and fold,we deliver care and convinience.Schedule a pickup and
+                rediscover the freshness of you clothes today!
+            </p>
+            <a href="#main-section"><button id="book-button"><i class="fa-solid fa-box"></i> Book a service
+                    today!</button></a>
+        </div>
+        <div id="right_div"><img src="https://www.sansuiworld.com/images/washingmachine/frontload/controller-2.png">
+        </div>
+    </section>
+    <div id="first-footer">
+        <h2>Our Achievements</h2>
+        <div>
+            <h4>15+</h4>
+            <p>Laundry Services</p>
+        </div>
+        <div>
+            <h4>240+</h4>
+            <p>Happy Customers</p>
+        </div>
+        <div>
+            <h4>2+ Yrs</h4>
+            <p>Experience</p>
+        </div>
+    </div>
+</body>
+
+</html>

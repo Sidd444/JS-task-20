@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #last-info img {
+            height: 30px;
+            width: 40px;
+        }
+
+        #last-section {
+            padding: 2%;
+            margin-top: 5%;
+        }
+
+        #last-service-info {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #last-service-info>div {
+            width: 18vw;
+            text-align: center;
+            align-items: center;
+        }
+
+        #newsletter-subscription {
+            display: flex;
+            align-items: center;
+            gap: 10%;
+            background-color: rgb(33, 118, 216);
+            height: 15vh;
+            width: 100vw;
+            padding: 3%;
+        }
+
+        #name-and-subscribe {
+            display: flex;
+            justify-content: space-between;
+            gap: 5%;
+        }
+
+        #last-info {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #last-info>div>ul {
+            list-style: none;
+        }
+
+        #subscription-form>div>button {
+            margin-top: 3%;
+            background-color: white;
+            color: blue;
+            font-weight: bolder;
+            height: 6vh;
+            width: 60%;
+            border: none;
+        }
+
+        #name-and-subscribe>input {
+            background-color: rgb(75, 153, 243);
+            color: white;
+            height: 6vh;
+            width: 18vw;
+        }
+
+        #name-and-subscribe>input::placeholder {
+            color: white;
+            opacity: 70%;
+        }
+
+        .about-us-info {
+            margin-top: 0%;
+            margin-bottom: 0%;
+        }
+
+        #social-media {
+            display: flex;
+            gap: 20%;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow: auto;
+            overflow-x: hidden;
+        }
+
+        .nav-options:hover {
+            text-decoration: underline;
+            color: blue;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <title>About page</title>
+</head>
+
+<body>
+    <div id="last-section">
+        <div id="last-service-info">
+            <div><i class="fa fa-3x fa-jug-detergent"></i>
+                <h3>Premium Services</h3>
+                <p>Elevate your wardrobes with out meticilous dry cleaning, ensuring garments look and feel as good as
+                    new</p>
+            </div>
+            <div><i class="fa fa-3x fa-headset"></i>
+                <h3>Quick Support</h3>
+                <p>We have commited to providing prompt solutions to ensure you experience in smooth and worry free.
+            </div>
+            <div><i class="fa fa-3x fa-truck"></i>
+                <h3>Hassle Free Delivery</h3>
+                <p>Enjoy seamless services with our convinient pickup and delivery options, tailoreed to your schedule
+                </p>
+            </div>
+            <div><i class="fa fa-3x fa-hand-holding-dollar"></i>
+                <h3>Affordable Prices</h3>
+                <p>Experience exceptional care with out breaking the bank.</p>
+            </div>
+        </div>
+        <div id="newsletter-subscription">
+            <h1 style="color:white;width:25%;margin-left: 10%;">Subscribe To Our newsletter</h1>
+            <div id="subscription-form">
+                <div id="name-and-subscribe">
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email">
+                </div>
+                <div>
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div id="last-info">
+            <div style="width:20%;">
+                <h4><img src="https://webstockreview.net/images/clipart-fruit-washing-18.png"></h4>
+                <h4>About Us</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil.</p>
+            </div>
+            <div>
+                <h4>Important Links</h4>
+                <p class="about-us-info">About us</p>
+                <p class="about-us-info">Contact Us</p>
+                <p class="about-us-info">Privacy Policy</p>
+                <p class="about-us-info">Terms Of Use</p>
+                <p class="about-us-info">Refund Policy</p>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>mail@site.com</p>
+                <p>+91 976272928</p>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <div id="social-media">
+                    <i class="fa-brands fa-2x fa-instagram"></i>
+                    <i class="fa-brands fa-2x fa-facebook"></i>
+                    <i class="fa-brands fa-2x fa-twitter"></i>
+                    <i class="fa-brands fa-2x fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

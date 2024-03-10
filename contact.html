@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            height: 100vh;
+        }
+
+        .image>img {
+            height: 560px;
+            width: 650px;
+        }
+
+        .image {
+            height: 560px;
+        }
+
+        input {
+            height: 50px;
+            width: 400px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            height: 560px;
+            width: 600px;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #d9eaecd8;
+        }
+
+        button {
+            color: white;
+            background-color: rgb(1, 75, 160);
+            text-align: center;
+            height: 50px;
+            width: 400px;
+            border-radius: 10px;
+            border: none;
+            font-size: 20px;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        form>p {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+    </style>
+    <title>Contact Page</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="image"><img
+                src="https://homelyee.com/wp-content/uploads/2023/03/When-To-Put-Fabric-Softener-In-Automatic-Washing-Machine.jpg">
+        </div>
+        <div class="form">
+            <h1>Hello Again!</h1>
+            <p>Welcome back! we missed you!</p>
+            <form>
+                <label for="email">
+                    <p>Email</p>
+                    <input type="email" placeholder="Emailid@site.com" required>
+                </label>
+                <label for="password">
+                    <p>password</p>
+                    <input type="password" placeholder="Password" required>
+                </label>
+                <p>Forgot Password</p>
+                <button type="submit">Login</button>
+            </form>
+            <p>Not a member? <a href="#">Register now</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
